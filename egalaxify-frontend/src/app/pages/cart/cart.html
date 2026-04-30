@@ -1,0 +1,20 @@
+<h2>Carrito</h2>
+
+<div *ngIf="loading">Cargando...</div>
+
+<div *ngIf="!loading">
+  <app-alert [message]="message" [type]="type"></app-alert>
+  <div *ngFor="let item of cartItems" style="border: 1px solid #ccc; margin: 10px; padding: 10px">
+    <h3>{{ item.product?.name }}</h3>
+    <p>Precio: {{ item.product?.price }}</p>
+    <p>Cantidad: {{ item.quantity }}</p>
+
+    <button (click)="remove(item.productId)">Eliminar</button>
+  </div>
+
+  <h3>Total: {{ total }}</h3>
+  <button (click)="checkout()">Finalizar compra</button>
+  <br />
+  <br />
+  <button routerLink="/products">Seguir comprando</button>
+</div>

@@ -1,0 +1,16 @@
+<h2>Register</h2>
+
+<form (ngSubmit)="register()" novalidate>
+  <input type="text" name="fullName" placeholder="Full Name" [(ngModel)]="fullName" />
+  <br /><br />
+
+  <input type="email" name="email" placeholder="Email" [(ngModel)]="email" />
+  <br /><br />
+
+  <input type="password" name="password" placeholder="Password" [(ngModel)]="password" />
+  <br /><br />
+
+  <button type="submit">Register</button>
+</form>
+
+<app-alert [message]="message" [type]="type"></app-alert>

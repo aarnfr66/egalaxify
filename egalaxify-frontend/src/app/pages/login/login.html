@@ -1,0 +1,16 @@
+<h2>Login</h2>
+
+<form (ngSubmit)="login()" novalidate>
+  <input type="email" name="email" placeholder="Email" [(ngModel)]="email" /> <br />
+  <br />
+  <input type="password" name="password" placeholder="Password" [(ngModel)]="password" />
+  <br />
+  <br />
+  <button type="submit">Login</button>
+</form>
+<app-alert [message]="message" [type]="type"></app-alert>
+
+<p>
+  ¿No tienes cuenta?
+  <a routerLink="/register">Regístrate</a>
+</p>

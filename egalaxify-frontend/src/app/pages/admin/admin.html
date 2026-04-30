@@ -1,0 +1,45 @@
+<h2>Admin - Productos</h2>
+<app-alert [message]="message" [type]="type"></app-alert>
+<h3>Crear producto</h3>
+
+Nombre: <input [(ngModel)]="newProduct.name" placeholder="Ingrese nombre" />&nbsp;&nbsp;
+Descripción:
+<input
+  [(ngModel)]="newProduct.description"
+  placeholder="Ingrese descripción"
+/>&nbsp;&nbsp;<br /><br />
+Precio:
+<input [(ngModel)]="newProduct.price" type="number" placeholder="Ingresar precio" />&nbsp;&nbsp;
+Stock: <input [(ngModel)]="newProduct.stock" type="number" placeholder="Ingresar stock" />
+&nbsp;&nbsp;
+<button (click)="create()">Crear</button>
+
+<hr />
+
+<h3>Lista</h3>
+
+<div *ngFor="let p of products">
+  <div *ngIf="editingProduct?.id !== p.id">
+    {{ p.name }} - Precio: {{ p.price }} - Stock: {{ p.stock }}
+    <button (click)="edit(p)">Editar</button>&nbsp;&nbsp;
+    <button (click)="delete(p.id)">Eliminar</button>
+  </div>
+  <br />
+  <div *ngIf="editingProduct?.id === p.id">
+    <input [(ngModel)]="editingProduct.name" />&nbsp;&nbsp;
+    <input [(ngModel)]="editingProduct.price" />&nbsp;&nbsp;
+    <input [(ngModel)]="editingProduct.stock" />&nbsp;&nbsp;
+    <button (click)="save()">Guardar</button>&nbsp;&nbsp;
+    <button (click)="cancel()">Cancelar</button>
+  </div>
+</div>
+
+<h2>Órdenes</h2>
+
+<div *ngFor="let o of orders" style="border: 1px solid #ccc; margin: 10px; padding: 10px">
+  <p>Orden #{{ o.id }}</p>
+  <p>Total: ${{ o.totalAmount }}</p>
+  <p>Estado: {{ o.status }}</p>
+  <p>Usuario: {{ o.user?.email }}</p>
+  <p>Fecha: {{ o.createdAt }}</p>
+</div>

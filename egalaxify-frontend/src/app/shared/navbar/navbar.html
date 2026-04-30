@@ -1,0 +1,17 @@
+<nav class="navbar">
+  <H2>CyberStore eGalaxify</H2>
+  <a routerLink="/products">Productos</a>
+
+  <a *ngIf="auth.isUser()" routerLink="/cart"> Carrito ({{ cartCount$ | async }}) </a>
+
+  <a *ngIf="auth.isUser()" routerLink="/my-orders"> Mis órdenes </a>
+
+  <a *ngIf="auth.isAdmin()" routerLink="/admin"> Admin </a>
+
+  <span style="flex: 1"></span>
+  <span *ngIf="email">Bienvenido, {{ email }}</span>
+
+  <button *ngIf="!auth.isLogged()" routerLink="/login">Login</button>
+
+  <button *ngIf="auth.isLogged()" (click)="logout()">Logout</button>
+</nav>
