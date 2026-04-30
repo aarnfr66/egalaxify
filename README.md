@@ -9,20 +9,24 @@ Login con JWT
 Manejo de roles:
 USER
 ADMIN
+
 🛍️ Cliente (USER)
 Visualización de catálogo de productos
 Carrito de compras dinámico (contador reactivo)
 Proceso de checkout
 Generación de órdenes
+
 🛠️ Administrador (ADMIN)
 CRUD completo de productos
 Visualización de órdenes
 Relación de órdenes con usuario y detalle de compra
+
 ✅ UI & Validaciones
 Validaciones en formularios
 Mensajes dinámicos:
 éxito
 error
+
 🧰 Tecnologías utilizadas
 Frontend
 Angular
@@ -31,16 +35,21 @@ ASP.NET Core Web API
 Entity Framework Core
 Base de datos
 SQL Server
+
 ⚙️ Instalación y ejecución
+
 🔧 Backend
 dotnet run
+
 💻 Frontend
 npm install
 ng serve
+
 👥 Roles de prueba
 Rol	Permisos
 USER	Compra de productos
 ADMIN	Gestión de productos y órdenes
+
 🗄️ Base de datos
 
 La base de datos es gestionada mediante Entity Framework Core (Code First).
@@ -67,6 +76,7 @@ CRUD completo de usuarios
 Mejoras en UI/UX
 Optimización de manejo de estado
 Seguridad avanzada
+
 🎯 Objetivo
 
 Proyecto desarrollado como práctica profesional para consolidar conocimientos en desarrollo fullstack y servir como parte de portafolio para oportunidades laborales junior.
